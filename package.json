@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "galaco": "^0.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^6.1.0",

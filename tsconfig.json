@@ -29,7 +29,8 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "razzle.config.js"
+    "razzle.config.js",
+    "prettier.config.js"
   ],
   "types": ["typePatches", "node", "webpack-env"]
 }

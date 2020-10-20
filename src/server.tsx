@@ -3,7 +3,7 @@ import React from 'react';
 import {renderToString, renderToNodeStream} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 // Import the StyledComponents SSR util
-import {ServerStyleSheet} from 'styled-components';
+import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import {HelmetData} from 'react-helmet';
 import {HelmetProvider} from 'react-helmet-async';
 
@@ -26,11 +26,13 @@ const server = express()
         const context = {};
         const markup = renderToString(
             sheet.collectStyles(
-                <HelmetProvider context={helmetContext}>
-                    <StaticRouter context={context} location={req.url}>
-                        <App />
-                    </StaticRouter>
-                </HelmetProvider>
+                <StyleSheetManager sheet={sheet.instance}>
+                    <HelmetProvider context={helmetContext}>
+                        <StaticRouter context={context} location={req.url}>
+                            <App />
+                        </StaticRouter>
+                    </HelmetProvider>
+                </StyleSheetManager>
             )
         );
         // Generate all the style tags so they can be rendered into the page
