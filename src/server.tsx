@@ -16,6 +16,8 @@ const syncLoadAssets = () => {
 };
 syncLoadAssets();
 
+const chunks = require(process.env.RAZZLE_CHUNKS_MANIFEST!);
+
 const server = express()
     .disable('x-powered-by')
     .use(express.static(process.env.RAZZLE_PUBLIC_DIR!))

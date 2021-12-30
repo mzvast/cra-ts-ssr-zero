@@ -2,6 +2,7 @@
 
 module.exports = {
   plugins: [
+    "manifest",
     {
       name: 'typescript',
       options: {

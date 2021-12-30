@@ -5,7 +5,7 @@ import './Home.css';
 import {Helmet} from 'react-helmet-async';
 import {Box, styled} from 'galaco';
 const WebpOp = ({use, src, ...props}: any) => {
-    console.log('ddt::props', props);
+    // console.log('ddt::props', props);
     //can use webp?
     src = src + '@f_webp,q_50';
     return <Box {...props} src={src} use={use}></Box>;
